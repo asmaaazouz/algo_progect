@@ -10,11 +10,9 @@ def merge(arr, l, m, r):
 
 	for j in range(0, n2):
 		R[j] = arr[m + 1 + j]
-
 	i = 0	 
 	j = 0	 
 	k = l	 
-
 	while i < n1 and j < n2:
 		if L[i] <= R[j]:
 			arr[k] = L[i]
@@ -23,7 +21,6 @@ def merge(arr, l, m, r):
 			arr[k] = R[j]
 			j += 1
 		k += 1
-
 	while i < n1:
 		arr[k] = L[i]
 		i += 1
@@ -33,19 +30,14 @@ def merge(arr, l, m, r):
 		arr[k] = R[j]
 		j += 1
 		k += 1
-
-
-
 def mergeSort(arr, l, r):
 	if l < r:
-
 		m = l+(r-l)//2
-
 		mergeSort(arr, l, m)
 		mergeSort(arr, m+1, r)
 		merge(arr, l, m,r) 
 
-arr = [33, 11, 13, 2, 9, 87]
+arr = [9, 11, 15, 2, 9, 75]
 n = len(arr)
 print("Given array is")
 for i in range(n):
